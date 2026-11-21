@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TripVault</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<main class="card">
+    <h1>TripVault</h1>
+    <!-- th:text HTML-escapes the value, so a username can never inject markup (XSS). -->
+    <p>Signed in as <strong th:text="${username}">user</strong>.</p>
+
+    <ul class="links">
+        <li><a th:href="@{/api/trips}">My trips (JSON)</a></li>
+        <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/api/admin/trips}">All trips – admin (JSON)</a></li>
+    </ul>
+
+    <!-- Logout is a POST with a CSRF token, so another site cannot log you out or worse. -->
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Sign out</button>
+    </form>
+</main>
+</body>
+</html>

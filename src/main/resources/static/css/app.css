@@ -1,0 +1,76 @@
+/* Served from /css/app.css: an external file, because the Content-Security-Policy blocks inline styles. */
+:root {
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #1d2733;
+    --muted: #5b6875;
+    --accent: #1f6feb;
+    --warn-bg: #fff6db;
+    --warn-border: #e3b341;
+    --error-bg: #fde8e8;
+    --error-text: #9b1c1c;
+    --info-bg: #e6f4ea;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+h1 { margin: 0 0 16px; font-size: 1.6rem; }
+
+.notice {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+}
+
+.error { background: var(--error-bg); color: var(--error-text); padding: 10px 12px; border-radius: 6px; }
+.info  { background: var(--info-bg); padding: 10px 12px; border-radius: 6px; }
+
+label { display: block; margin-top: 14px; font-weight: 600; font-size: 0.9rem; }
+
+input {
+    width: 100%;
+    margin-top: 4px;
+    padding: 10px;
+    border: 1px solid #c9d1d9;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 11px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.links { padding-left: 18px; }
+.links a { color: var(--accent); }
